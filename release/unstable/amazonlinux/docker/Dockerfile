@@ -5,7 +5,7 @@
 # installed from RHEL7 PowerShell package
 
 # Define arg(s) needed for the From statement
-FROM amazonlinux:latest AS installer-env
+FROM amazonlinux:2023.4.20240528.0 AS installer-env
 
 # Define Args for the needed to add the package
 ARG PS_VERSION=7.0.1
