@@ -1,7 +1,7 @@
 # Copyright (c) Microsoft Corporation.
 # Licensed under the MIT License.
 
-FROM --platform=linux/arm/v7 ubuntu:jammy AS installer-env
+FROM --platform=linux/arm/v7 ubuntu:noble-20241009 AS installer-env
 
     ARG PS_VERSION=7.2.4
     ENV PS_PACKAGE=powershell-${PS_VERSION}-linux-arm32.tar.gz
@@ -36,7 +36,7 @@ FROM --platform=linux/arm/v7 ubuntu:jammy AS installer-env
         # Unzip the Linux tar.gz
     RUN tar zxf /tmp/powershell.tar.gz -C ${PS_INSTALL_FOLDER}
 
-FROM --platform=linux/arm/v7 ubuntu:jammy AS final-image
+FROM --platform=linux/arm/v7 ubuntu:noble-20241009 AS final-image
 
     # Define Args and Env needed to create links
     ARG PS_INSTALL_VERSION=7
